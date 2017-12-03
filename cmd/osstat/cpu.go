@@ -1,4 +1,4 @@
-// +build linux darwin,cgo
+// +build linux darwin,cgo solaris,cgo
 
 package main
 
