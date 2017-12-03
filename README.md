@@ -34,6 +34,7 @@ func main() {
 |Darwin|o|o|△<sup>*1</sup>|o|o|x|
 |FreeBSD|o|o|x|△<sup>*2</sup>|o|x|
 |NetBSD|o|o|x|x|o|x|
+|Solaris|△<sup>*1</sup>|△<sup>*1</sup>|△<sup>*1</sup>|x|x|x|
 |Windows|x|o|x|o|x|x|
 
 *1: unavailable without cgo
