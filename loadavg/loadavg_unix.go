@@ -6,7 +6,11 @@ import (
 	"errors"
 )
 
+// #if defined(sun) || defined(__sun)
+// #include <sys/loadavg.h>
+// #else
 // #include <stdlib.h>
+// #endif
 import "C"
 
 // Reference: man 3 getloadavg
