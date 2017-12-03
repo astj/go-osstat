@@ -24,14 +24,14 @@ type Stats struct {
 }
 
 func collectCPUStats() (*Stats, error) {
-	maxCPUs := int(C.sysconf(C._SC_CPUID_MAX)) + 1
-
 	tok, err := kstat.Open()
 	if err != nil {
 		return nil, err
 	}
 	defer tok.Close()
 
+	// ref: illumos: usr/src/cmd/stat/common/acquire.c
+	maxCPUs := int(C.sysconf(C._SC_CPUID_MAX)) + 1
 	cpu := Stats{}
 	for i := 0; i < maxCPUs; i++ {
 		state, err := C.p_online(C.processorid_t(i), C.P_STATUS)
