@@ -56,7 +56,8 @@ func collectCPUStats() (*Stats, error) {
 			return nil, err
 		}
 		if err := getNamedAndAdd(sys, "cpu_ticks_stolen", &cpu.Stolen); err != nil {
-			return nil, err
+			// stolen does not exist in Illumos, so skip the error
+			// return nil, err
 		}
 		if err := getNamedAndAdd(sys, "cpu_ticks_user", &cpu.User); err != nil {
 			return nil, err
