@@ -7,6 +7,7 @@ import (
 )
 
 // #if defined(sun) || defined(__sun)
+// #include <sys/time.h>
 // #include <sys/loadavg.h>
 // #else
 // #include <stdlib.h>
